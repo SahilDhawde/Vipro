@@ -11,10 +11,10 @@
   .company { text-align: center; padding: 0 8px; }
   .company-name { font-size: 26px; font-weight: bold; color: #ff6600; text-transform: uppercase; }
   .company-details { font-size: 8.5px; line-height: 1.4; margin-top: 4px; }
-  .gst-line { font-size: 5.0 px; font-weight: bold; text-align: left; }
+  .gst-line { font-size:8.5px px; font-weight: semibold; text-align: left; }
   .invoice-title { text-align: center; font-size: 15px; font-weight: bold; border: 1px solid #000; border-top: none; padding: 3px; text-decoration: underline; }
   .section { border: 1px solid #000; margin-top: 1px; padding: 6px; }
-  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 10px; }
   td, th { border: 1px solid #000; padding: 6px; vertical-align: top; }
   th { background: #f2f2f2; text-align: center; }
   .footer { display: flex; justify-content: space-between; margin-top: 15px; }
@@ -40,7 +40,7 @@
       Unit No.116, Cama Industrial Estate, Sunmill Compound, Lower Parel (West), Mumbai - 400013<br>
       Contact: 9372727112, +91-9372727120 | E-Mail: accounts@vinayakcorporation.com<br>
       <div class="gst-line">
-        GSTIN/UIN:27AABCB3688F1ZM|State Name:Maharashtra|Code:27|CIN:U51900MH1992PTC070151
+        GSTIN/UIN:27AABCB3688F1ZM | State Name:Maharashtra | Code:27 | CIN:U51900MH1992PTC070151
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@
 
     <!-- RIGHT SIDE -->
     <td style="width:50%; border:1px solid #000; vertical-align:top; padding:0;">
-      <table style="width:100%; border-collapse:collapse; font-size:12px;">
+      <table style="width:100%; border-collapse:collapse; font-size:10px;">
         <tr>
           <td style="border:1px solid #000; padding:6px;">Invoice No/e-Way Bill No:</td>
           <td style="border:1px solid #000; padding:6px;">{{invoice_no}}</td>
@@ -110,10 +110,6 @@
           <td style="border:1px solid #000; padding:6px;">Reference No. & Date:</td>
           <td style="border:1px solid #000; padding:6px;">{{reference}}</td>
         </tr>
-        <tr>
-          <td style="border:1px solid #000; padding:6px;">Others Reference:</td>
-          <td style="border:1px solid #000; padding:6px;">{{other_reference}}</td>
-        </tr>
       </table>
     </td>
   </tr>
@@ -130,7 +126,6 @@
     </tr>
   </thead>
   <tbody>
-    {{#each products}}
     <tr>
       <td style="text-align:center;">{{@index}}</td>
       <td>{{description}}</td>
@@ -142,7 +137,6 @@
       <td style="text-align:right;">{{rate}}</td>
       <td style="text-align:right;">{{amount}}</td>
     </tr>
-    {{/each}}
     <!-- blank rows for spacing -->
     <tr><td colspan="9" style="height:50px;"></td></tr>
   </tbody>
