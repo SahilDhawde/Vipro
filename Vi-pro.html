@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tax Invoice</title>
+<style>
+  body { font-family: Arial, sans-serif; font-size: 12px; margin: 0; padding: 20px; }
+  .header-box { border: 1px solid #000; display: grid; grid-template-columns: 120px auto; padding: 6px; }
+  .logo { border: 1px solid #000; display: flex; justify-content: center; align-items: center; height: 90px; }
+  .logo img { max-width: 95%; max-height: 95%; }
+  .company { text-align: center; padding: 0 8px; }
+  .company-name { font-size: 26px; font-weight: bold; color: #ff6600; text-transform: uppercase; }
+  .company-details { font-size: 8.5px; line-height: 1.4; margin-top: 4px; }
+  .gst-line { font-size: 5.0 px; font-weight: bold; text-align: left; }
+  .invoice-title { text-align: center; font-size: 15px; font-weight: bold; border: 1px solid #000; border-top: none; padding: 3px; text-decoration: underline; }
+  .section { border: 1px solid #000; margin-top: 1px; padding: 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  td, th { border: 1px solid #000; padding: 6px; vertical-align: top; }
+  th { background: #f2f2f2; text-align: center; }
+  .footer { display: flex; justify-content: space-between; margin-top: 15px; }
+  .bank { width: 48%; border: 1px solid #000; }
+  .bank .head { font-weight: bold; border-bottom: 1px solid #000; padding: 5px; }
+  .bank .body { padding: 6px; font-size: 11px; line-height: 1.4; }
+  .sign { margin-top: 30px; text-align: right; font-size: 12px; }
+  .note { margin-top: 10px; font-size: 11px; font-style: italic; text-align:center; }
+  @media print {
+    body { margin: 0; }
+    thead { display: table-header-group; } /* repeat table header on page break */
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header-box">
+  <div class="logo"><img src="logo.png" alt="Logo"></div>
+  <div class="company">
+    <div class="company-name">VINAYAK INGREDIENTS<br>(INDIA) PVT. LTD.</div>
+    <div class="company-details">
+      Unit No.116, Cama Industrial Estate, Sunmill Compound, Lower Parel (West), Mumbai - 400013<br>
+      Contact: 9372727112, +91-9372727120 | E-Mail: accounts@vinayakcorporation.com<br>
+      <div class="gst-line">
+        GSTIN/UIN:27AABCB3688F1ZM|State Name:Maharashtra|Code:27|CIN:U51900MH1992PTC070151
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Title -->
+<div class="invoice-title">TAX INVOICE</div>
+
+<!-- Consignee + Buyer + Invoice Details in one table -->
+<table style="width:100%; border-collapse:collapse; margin-top:0px; font-size:10px;">
+  <tr>
+    <!-- LEFT SIDE -->
+<td style="width:50%; border:1px solid #000; vertical-align:top; padding:6px;">
+  <b>Consignee (Ship to):</b><br>
+  {{consignee_name}}<br>
+  {{consignee_address}}<br>
+  GSTIN/UIN: {{consignee_gstin}} <br> 
+  State: {{consignee_state}} &nbsp;&nbsp; Code: {{consignee_code}}<br>
+  Contact: {{consignee_contact}}
+  <div style="border-top:1px solid #000; margin:6px -6px;"></div>
+
+  <b>Buyer (Bill to):</b><br>
+  {{buyer_name}}<br>
+  {{buyer_address}}<br>
+  GSTIN/UIN: {{buyer_gstin}} <br> 
+  State: {{buyer_state}} &nbsp;&nbsp; Code: {{buyer_code}}<br>
+  Contact: {{buyer_contact}}
+  <div style="border-top:1px solid #000; margin:6px -6px;"></div>
+
+  <b>Terms of Delivery:</b><br>
+  {{terms_delivery}}
+</td>
+
+
+    <!-- RIGHT SIDE -->
+    <td style="width:50%; border:1px solid #000; vertical-align:top; padding:0;">
+      <table style="width:100%; border-collapse:collapse; font-size:12px;">
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Invoice No/e-Way Bill No:</td>
+          <td style="border:1px solid #000; padding:6px;">{{invoice_no}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Buyer’s Order No:</td>
+          <td style="border:1px solid #000; padding:6px;">{{order_no}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Dated:</td>
+          <td style="border:1px solid #000; padding:6px;">{{invoice_date}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Order Dated:</td>
+          <td style="border:1px solid #000; padding:6px;">{{order_date}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Dispatched through:</td>
+          <td style="border:1px solid #000; padding:6px;">{{dispatch_mode}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Destination:</td>
+          <td style="border:1px solid #000; padding:6px;">{{destination}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Mode/Terms of Payment:</td>
+          <td style="border:1px solid #000; padding:6px;">{{payment_terms}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Reference No. & Date:</td>
+          <td style="border:1px solid #000; padding:6px;">{{reference}}</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid #000; padding:6px;">Others Reference:</td>
+          <td style="border:1px solid #000; padding:6px;">{{other_reference}}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Products -->
+<table>
+  <thead>
+    <tr>
+      <th>Sr. No.</th><th>Description of Goods</th><th>HSN/SAC</th>
+      <th>Batch No</th><th>Mfd. Date</th><th>Expiry</th>
+      <th>Quantity</th><th>Rate</th><th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+    <tr>
+      <td style="text-align:center;">{{@index}}</td>
+      <td>{{description}}</td>
+      <td style="text-align:center;">{{hsn}}</td>
+      <td style="text-align:center;">{{batch}}</td>
+      <td style="text-align:center;">{{mfd}}</td>
+      <td style="text-align:center;">{{expiry}}</td>
+      <td style="text-align:right;">{{qty}}</td>
+      <td style="text-align:right;">{{rate}}</td>
+      <td style="text-align:right;">{{amount}}</td>
+    </tr>
+    {{/each}}
+    <!-- blank rows for spacing -->
+    <tr><td colspan="9" style="height:50px;"></td></tr>
+  </tbody>
+</table>
+
+<!-- Totals -->
+<table>
+  <tr><td>Amount Chargeable (in words):</td><td colspan="3">{{amount_words}}</td></tr>
+  <tr><td>Taxable Value:</td><td>{{taxable_value}}</td><td>Total:</td><td>{{grand_total}}</td></tr>
+  <tr><td>Tax Amount (in words):</td><td colspan="3">{{tax_words}}</td></tr>
+</table>
+
+<!-- Footer -->
+<div class="footer">
+  <div class="bank">
+    <div class="head">Company’s Bank Details:</div>
+    <div class="body">
+      A/c Holder Name : Vinayak Ingredients (I) Pvt. Ltd.<br>
+      Bank Name : Kotak Mahindra Bank Ltd<br>
+      A/c No : 2411390381<br>
+      Branch & IFSC Code : Lower Parel-West & KKBK0000638<br>
+      Company’s PAN : AABCB3688F
+    </div>
+  </div>
+</div>
+
+<!-- Signature -->
+<div class="sign">
+  For Vinayak Ingredients (India) Pvt. Ltd.<br><br><br>
+  Authorized Signatory
+</div>
+
+<!-- Note -->
+<div class="note">This is computer generated invoice</div>
+
+</body>
+</html>
