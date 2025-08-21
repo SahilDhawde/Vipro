@@ -179,12 +179,12 @@
     </td>
   </tr>
   <tr>
-    <td style="border:1px solid #000; padding-right:60px; text-align:right;">
+    <td style="border:1px solid #000; padding-right:90px; text-align:right;">
       Taxable Value: {{taxable_value}}
     </td>
   </tr>
   <tr>
-    <td style="border:1px solid #000; padding-right:60px; text-align:right; font-weight:bold;">
+    <td style="border:1px solid #000; padding-right:90px; text-align:right; font-weight:bold;">
       Total: {{grand_total}}
     </td>
   </tr>
@@ -198,7 +198,7 @@
   <table style="width:100%; border-collapse:collapse;">
   <tr>
     <!-- Left side: Bank Details -->
-    <td style="width:55%; border:1px solid #000; vertical-align:top; padding:3px; font-size:10px;">
+    <td style="width:50%; border:1px solid #000; vertical-align:top; padding:3px; font-size:10px;">
       <b>Company’s Bank Details:</b><br>
       A/c Holder Name: <b>Vinayak Ingredients (I) Pvt. Ltd.</b><br>
       Bank Name:<b>Kotak Mahindra Bank Ltd</b><br>
@@ -208,9 +208,12 @@
     </td>
 
     <!-- Right side: Signature -->
-    <td style="width:45%; border:1px solid #000; vertical-align:top; text-align:right; padding:6px; font-size:10px;">
-      For <b>Vinayak Ingredients (India) Pvt. Ltd.</b><br><br><br><br>
-      Authorised Signatory
+     <td style="width:50%; padding:2px; vertical-align:top;">
+      <b>Tax Amount (in words):</b> {{tax_words}}
+      <div style="border-top:1px solid #000; margin-top:10px; padding-top:2 px; text-align:right;">
+        For <b>Vinayak Ingredients (India) Pvt. Ltd.</b><br><br><br>
+        Authorised Signatory
+      </div>
     </td>
   </tr>
 </table>
