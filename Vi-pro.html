@@ -122,13 +122,13 @@
 <table style="width:100%; border-collapse:collapse; margin-top:10px;">
   <thead>
     <tr style="border-top:1px solid #000; border-bottom:1px solid #000;">
-      <th style="width:5%; border-left:1px solid #000; border-right:1px solid #000;">Sr. No.</th>
+      <th style="width:2%; border-left:1px solid #000; border-right:1px solid #000;">Sr. No.</th>
       <th style="border-right:1px solid #000;">Description of Goods</th>
-      <th style="width:10%; border-right:1px solid #000;">HSN/SAC</th>
-      <th style="width:10%; border-right:1px solid #000;">Quantity</th>
-      <th style="width:10%; border-right:1px solid #000;">Rate</th>
+      <th style="width:15%; border-right:1px solid #000;">HSN/SAC</th>
+      <th style="width:15%; border-right:1px solid #000;">Quantity</th>
+      <th style="width:13%; border-right:1px solid #000;">Rate</th>
       <th style="width:6%; border-right:1px solid #000;">Per</th>
-      <th style="width:12%; border-right:1px solid #000;">Amount</th>
+      <th style="width:16%; border-right:1px solid #000;">Amount</th>
     </tr>
   </thead>
   <tbody>
@@ -159,9 +159,15 @@
   </tbody>
   <tfoot>
     <tr style="border-top:1px solid #000; border-bottom:1px solid #000;">
-      <td colspan="7" style="border-left:1px solid #000; border-right:1px solid #000; text-align:right; font-weight:bold; padding:6px;">
-        Total: {{grand_total}}
+         <td style="text-align:center; border-left:1px solid #000; border-right:1px solid #000;"></td>
+      <td style="border-right:1px solid #000;text-align:right;">
+       <b>Total</b> 
       </td>
+      <td style="text-align:center; border-right:1px solid #000;"></td>
+      <td style="text-align:center; border-right:1px solid #000;">{{qty}}<b>Kgs</b></td>
+      <td style="text-align:right; border-right:1px solid #000;"></td>
+      <td style="text-align:center; border-right:1px solid #000;"></td>
+      <td style="text-align:right; border-right:1px solid #000;">{{amount}}</td>
     </tr>
   </tfoot>
 </table>
