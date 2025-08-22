@@ -11,7 +11,7 @@
   .company { text-align: center; padding: 0 8px; }
   .company-name { font-size: 26px; font-weight: bold; color: #ff6600; text-transform: uppercase; }
   .company-details { font-size: 8.5px; line-height: 1.4; margin-top: 4px; }
-  .gst-line { font-size:8.5px px; font-weight: semibold; text-align: left; }
+  .gst-line { font-size:8.5px; font-weight: 600; text-align: left; }
   .invoice-title { text-align: center; font-size: 15px; font-weight: bold; border: 1px solid #000; border-top: none; padding: 3px; text-decoration: underline; }
   .section { border: 1px solid #000; margin-top: 1px; padding: 6px; }
   table { width: 100%; border-collapse: collapse; font-size: 10px; }
@@ -135,20 +135,20 @@
     <!-- Loop products -->
     {{#each products}}
     <tr>
-      <td style="text-align:center; border-left:1px solid #000; border-right:1px solid #000;">{{@index}}</td>
-      <td style="border-right:1px solid #000;">
-        {{description}}<br>
+      <td style="text-align:center; font-size:11px; border-left:1px solid #000; border-right:1px solid #000;"><b>{{@index}}</b></td>
+      <td style="border-right:1px solid #000;font-size:11px">
+       <b> {{description}}</b><br>
         <span style="font-size:11px; color:#000;">
-          Batch No: {{batch}} <br>
+          Batch No:<b> {{batch}} </b><br>
           Mfg: {{mfd}} <br>
           Exp: {{expiry}}
         </span>
       </td>
-      <td style="text-align:center; border-right:1px solid #000;">{{hsn}}</td>
-      <td style="text-align:center; border-right:1px solid #000;">{{qty}}</td>
-      <td style="text-align:right; border-right:1px solid #000;">{{rate}}</td>
-      <td style="text-align:center; border-right:1px solid #000;">{{per}}</td>
-      <td style="text-align:right; border-right:1px solid #000;">{{amount}}</td>
+      <td style="text-align:center; border-right:1px solid #000; font-size:11px;">{{hsn}}</td>
+      <td style="text-align:center; border-right:1px solid #000; font-size:11px;"><b>{{qty}}Kgs</b></td>
+      <td style="text-align:right; border-right:1px solid #000; font-size:11px;">{{rate}}</td>
+      <td style="text-align:center; border-right:1px solid #000; font-size:11px;">{{per}}</td>
+      <td style="text-align:right; border-right:1px solid #000; font-size:11px;"><b>{{amount}}</b></td>
     </tr>
     {{/each}}
 
@@ -165,14 +165,14 @@
   <tfoot>
     <tr style="border-top:1px solid #000; border-bottom:1px solid #000;">
          <td style="text-align:center; border-left:1px solid #000; border-right:1px solid #000;"></td>
-      <td style="border-right:1px solid #000;text-align:right;">
+      <td style="border-right:1px solid #000;text-align:right; font-size:11px;">
        <b>Total</b> 
       </td>
       <td style="text-align:center; border-right:1px solid #000;"></td>
-      <td style="text-align:center; border-right:1px solid #000;"><b>{{qty}Kgs</b></td>
+      <td style="text-align:center; border-right:1px solid #000;font-size:11px;"><b>{{qty}}Kgs</b></td>
       <td style="text-align:right; border-right:1px solid #000;"></td>
       <td style="text-align:center; border-right:1px solid #000;"></td>
-      <td style="text-align:right; border-right:1px solid #000;"><b>₹{{amount}}</b></td>
+      <td style="text-align:right; border-right:1px solid #000;font-size:11px;"><b>₹{{amount}}</b></td>
       
     </tr>
   </tfoot>
@@ -196,7 +196,7 @@
     </td>
   </tr>
   <tr>
-    <td style="border:1px solid #000; padding-right:90px; text-align:right; font-weight:bold;">
+    <td style="border:1px solid #000; padding-right:90px; text-align:right; font-weight:bold; font-size:11px;">
       Total: {{grand_total}}
     </td>
   </tr>
@@ -222,7 +222,7 @@
     <!-- Right side: Signature -->
      <td style="width:50%; padding:2px; vertical-align:top;">
       <b>Tax Amount (in words):</b> {{tax_words}}
-      <div style="border-top:1px solid #000; margin-top:10px; padding-top:2 px; text-align:right;">
+      <div style="border-top:1px solid #000; margin-top:10px; padding-top:4 px; text-align:right;">
         For <b>Vinayak Ingredients (India) Pvt. Ltd.</b><br><br><br>
         Authorised Signatory
       </div>
