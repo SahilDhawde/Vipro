@@ -1,0 +1,53 @@
+<h3>{{ doc.select_print_heading or "Cover Letter for Geo Chem" }}</h3>
+
+<div class="row mb-2">
+  <div class="col-md-3 text-right">Date : {{ doc.get_formatted("date") }}</div>
+</div>
+
+<div class="mb-3">
+  <p>To,<br>
+  <strong>Geo - Chem Laboratories Pvt Ltd.</strong><br>
+     Kanjur Marg (E)</p>
+</div>
+
+<div class="row mb-2">
+  <div class="col-md-3 text-right"><strong>Subject: Analysis of the sample as per FSSAI Act prescribed for Food Colour</strong></div>
+</div>
+
+<p>Dear Sir/Madam,</p>
+
+<p>This is with regards to the above subject. We will be highly thankful to you if you arrange the analysis of our submitted sample described below.</p>
+
+<table class="table table-bordered mt-3">
+  <tbody>
+    <tr>
+      <td><strong>Product Name:{{ doc.product_name }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Product Code: {{ doc.product_code }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Batch Number: {{ doc.batch_number }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Mfg Date: {{ doc.get_formatted("mfg_date") }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Exp Date: {{ doc.get_formatted("exp_date") }}</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Invoice No.: {{ doc.invoice_no }} dated {{ doc.get_formatted("invoice_date") }}</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We also request you that at the time of issuing the test certificate kindly mention aforesaid product details on report.</p>
+
+<p>Kindly do the needful &amp; oblige.</p>
+
+<p>Thanking You,</p>
+
+<p>For <strong>Vinayak Ingredients (India) Pvt Ltd.</strong></p>
+<br>
+<br>
+<p class="mt-4">(Authorised Signatory)</p>
