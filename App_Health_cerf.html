@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Application for Health Certificate - Vinayak Ingredients (India) Pvt. Ltd.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Page setup for printing on A4 */
+    @page {
+      size: A4;
+      margin: 25mm 20mm 20mm 20mm; /* top, right, bottom, left */
+    }
+    /* Screen preview approximating A4 */
+    html, body {
+      height: 100%;
+      background: #f4f4f4;
+    }
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12pt;
+      line-height: 1.15;
+      color: #000;
+    }
+    .sheet {
+      box-sizing: border-box;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 10mm auto;
+      background: #fff;
+      padding: 25mm 20mm 20mm 20mm; /* mirrors @page margins for screen */
+      box-shadow: 0 0 0.5mm rgba(0,0,0,0.2);
+    }
+    @media print {
+      html, body {
+        background: #fff;
+      }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        width: auto;
+        min-height: auto;
+        padding: 0;
+      }
+      .no-print { display: none !important; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    /* Typography */
+    p { margin: 0 0 10pt 0; }
+    .mb-16 { margin-bottom: 16pt; }
+    .mb-10 { margin-bottom: 10pt; }
+    .separator {
+      border: 0;
+      border-top: 1px solid #000;
+      margin: 10pt 0 12pt 0;
+      height: 0;
+    }
+    ul {
+      margin: 0 0 10pt 0;
+      padding-left: 18pt;
+    }
+    li { margin-bottom: 4pt; }
+    .signature { margin-top: 24pt; }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <br>
+    <br>
+    <br>
+    <br>
+    <p class="mb-16">Date : {{Date}}</p>
+
+    <p>To,</p>
+    <p>The Export Inspection Council – Mumbai,<br>
+      (Health Certificate issuing department)<br>
+      Pilot Test House, Marol<br>
+      Andheri, Mumbai</p>
+
+    
+    <p class="mb-16">Dear Sir/Madam,</p>
+
+    <p><strong>Reg: Application for Health Certificate </strong></p>
+    <p class="mb-16">Ref:<strong>  Invoice No. – {{Voice_no}} DATED : {{Invoice_Date}}</strong></p>
+
+    <p class="mb-10">This is in context to the above reference. We require a Health Certificate for  Invoice No. – {{Voice_no}} DATED : {{Invoice_Date}}
+    </strong>. We are submitting the following documents for the same:</p>
+
+    <ul class="mb-16">
+      <li>Eazpay – e-receipt transaction <strong> ID No.: {{ID_number}} DT. : {{Id_Date}}</strong></li>
+      <li>Application for issuance of Health Certificate</li>
+      <li>Invoice – Original</li>
+      <li>Packing List – Original</li>
+      <li>Test Report from Geo-Chem</li>
+      <li>COA</li>
+      <li>Specification declaration</li>
+      <li>MSDS of products</li>
+      <li>End USE letter</li>
+      <li>Ingredients Declaration</li>
+      <li>Declaration for Origin</li>
+      <li>Online application for <strong> Health Certificate No.: {{health_cerf}} DT. :{{Id_Date}}</strong></li>
+    </ul>
+
+    <p class="mb-16">We therefore request you to kindly issue us the Health Certificate as soon as possible.</p>
+
+    <p class="mb-16">Thanking you,</p>
+
+    Yours faithfully,<br>
+    <p><strong>Vinayak Ingredients (India) Pvt Ltd.</strong></p>
+    
+    <br>
+    <br>
+    <p class="signature">(Authorised Signatory)</p>
+    
+    <p>Encl: A/A</p>
+  </div>
+
+  </div>
+</body>
+</html>
