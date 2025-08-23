@@ -1,0 +1,35 @@
+<h3 style="text-align: center; text-decoration: underline;">
+  ANNEXURE
+</h3>
+
+<p style="text-align: center; font-weight: bold;">
+  DECLARATION TO BE FILED AS PART OF SHIPPING BILL OR BILL OF EXPORT FOR EXPORT OF GOODS UNDER RoDTEP SCHEME
+</p>
+
+<p><strong>INVOICE NO : {{ doc.name }} &nbsp;&nbsp; Dated: {{ doc.get_formatted("posting_date") }}</strong></p>
+
+<p>
+“I/We, in regard to my/our claim under RoDTEP scheme made in this Shipping Bill or Bill of Export, hereby declare that:
+</p>
+
+<ol>
+  <li>I/ We undertake to abide by the provisions, including conditions, restrictions, exclusions and time-limits as provided under RoDTEP scheme, and relevant notifications, regulations, etc., as amended from time to time.</li>
+  <li>Any claim made in this shipping bill or bill of export is not with respect to any duties or taxes or levies which are exempted or remitted or credited under any other mechanism outside RoDTEP.</li>
+  <li>I/We undertake to preserve and make available relevant documents relating to the exported goods for the purposes of audit in the manner and for the time period prescribed in the Customs Audit Regulations, 2018.”</li>
+</ol>
+
+<br>
+
+<p>
+The exporter will have to make following declarations in the <strong>SW_INFO_TYPE</strong> Table of the Shipping Bill for each item:
+</p>
+
+<ul>
+  <li>INFO TYPE = DTY</li>
+  <li>INFO QFR = RDT</li>
+  <li>INFO CODE = RODTEPY</li>
+</ul>
+
+<br><br>
+<p><strong>For Vinayak Ingredients (India) Pvt. Ltd.</strong></p>
+<p><strong>Authorised Signatory</strong></p>
