@@ -1,0 +1,53 @@
+<h3>{{ doc.select_print_heading or "Declaration of Ingredients" }}</h3>
+
+<p><strong>INVNO: {{ doc.name }} DATED {{ doc.get_formatted("posting_date") }}</strong></p>
+
+<p><strong>The Export Inspection Agency</strong><br>
+Pilot Test house,<br>
+Andheri, Mumbai</p>
+
+<p>Dear Sir/Madam,</p>
+
+<p>
+We are exporting food additives such as <strong>{{ doc.items[0].item_name }}</strong> – 
+<strong>{{ doc.items[0].qty }} {{ doc.items[0].uom }}</strong> 
+to {{ doc.customer_address or doc.customer_name }} vide our <strong>invoice no.: 
+{{ doc.name }} dated {{ doc.get_formatted("posting_date") }}</strong> 
+to our foreign customer <strong>{{ doc.customer_name }}</strong> manufacturer.
+</p>
+
+<p>
+We hereby declare the ingredients for the above products as below:
+</p>
+      <p><strong>{{ doc.items[0].item_name }} : {{ doc.items[0].description }}</strong></p>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+We hope the above information finds in order and we humbly request for issuing Health Certificate and oblige.
+</p>
+
+<p>Thanking you,</p>
+<p>Yours Truly,</p>
+
+<p><strong>For Vinayak Ingredients (India) Pvt Ltd</strong></p>
+
+<br><br>
+<p>Authorised Signatory</p>
+
+<div class="row">
+  <div class="col-md-3 text-right"><strong>Designation: Export Executive</div>
+</div>
+<div class="row">
+  <div class="col-md-3 text-right"><strong>Name: Mamta Chavan</div>
+</div>
+<div class="row">
+  <div class="col-md-3 text-right"><strong>Contact No.: 022 405 60 405</div>
+</div>
+<div class="row">
+  <div class="col-md-3 text-right"><strong>Mobile No.: 9372727121</div>
+</div>
+<div class="row">
+  <div class="col-md-3 text-right"><strong>Email: exports@vinayakcorporation.com</div>
+</div>
