@@ -1,0 +1,32 @@
+<h3>{{ doc.select_print_heading or "Specification Declaration" }}</h3>
+<br>
+<br>
+<p><strong>INVNO: {{ doc.name }} DATED {{ doc.get_formatted("posting_date") }}</p>
+<br>
+<br>
+<p style="text-align: center; font-size: 16pt; font-weight: bold;">
+  <u>TO WHOMSOEVER IT MAY CONCERN</u>
+</p>
+<br>
+<br>
+<p>
+We hereby confirm that the client does not have any specification for the below product which is to be exported to them:
+</p>
+
+<ul>
+  {%- for row in doc.items -%}
+    <li>{{ row.item_name }} - {{ row.qty }} {{ row.uom or row.stock_uom }}</li>
+  {%- endfor -%}
+</ul>
+<br>
+<br>
+<p>Thanking you,</p>
+<p>Yours Truly,</p>
+
+<p>For Vinayak Ingredients (India) Pvt Ltd</p>
+
+<br><br>
+<p>Mamta Chavan<br>
+Export Executive<br>
+Tel: +91 22 40560405<br>
+Mobile: 9372727121</p></strong>
