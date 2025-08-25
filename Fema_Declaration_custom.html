@@ -1,0 +1,65 @@
+<h3>{{ doc.select_print_heading or "DECLARATION" }}</h3>
+
+<br>
+<h3 style="text-align: center; text-decoration: underline;">
+  DECLARATION
+</h3>
+<br>
+<p>
+I/We declare that the particulars given herein above are true, correct and complete.</p>
+<p>I/We enclose herewith copies of the following documents*.
+</p>
+
+<ol>
+  <li>DBK Shipping Bill</li>
+  <li>Invoice/Invoice c&#8205;um packing list: {{ doc.name }} &nbsp;&nbsp; DT: {{ doc.get_formatted("posting_date") }}</li>
+  <li>Quota/Inspection certificates - N.A.</li>
+  <li>Others (Specify) - N.A.</li>
+</ol>
+<br>
+<style>
+  .declaration-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 11pt;
+  }
+  .declaration-table td {
+    border: 1px solid #000;
+    padding: 6px 10px;
+    vertical-align: top;
+  }
+  .declaration-table strong {
+    font-weight: bold;
+  }
+</style>
+
+<table class="declaration-table">
+  <tbody>
+    <tr>
+      <td style="width:50%;"><strong>Name of the Exporter:</strong> VINAYAK INGREDIENTS (INDIA) PVT LTD</td>
+      <td style="width:50%;"><strong>Name of Customs Broker:</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Designation:</strong> EXPORT EXECUTIVE</td>
+      <td><strong>Designation (Broker):</strong> EMPLOYE</td>
+    </tr>
+    <tr>
+      <td><strong>Name:</strong> WASIM PHANSOPKAR</td>
+      <td><strong>Identity Card Number:</strong> C-722</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+
+<p style="margin-top:15px;">
+I/We undertake to abide by the provisions of <em>Foreign Exchange Management Act, 1999</em>, as amended from time to time, including realization or repatriation of foreign exchange to or from India.
+</p>
+
+<p><em>* To be submitted with the export goods in the warehouse.</em></p>
+<br>
+<p><strong>Date:{{ doc.get_formatted("posting_date") }}</p></strong> 
+
+<br><br>
+<p><strong>Authorised Signatory</strong></p>
