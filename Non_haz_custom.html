@@ -1,0 +1,77 @@
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 11pt;
+  }
+  table, th, td {
+    border: 1px solid #000;
+  }
+  th, td {
+    padding: 6px;
+    vertical-align: top;
+  }
+  .center {
+    text-align: center;
+  }
+</style>
+
+<table>
+  <tr>
+     <tr>
+    <th colspan="4" class="center" style="font-size: 13pt; font-weight: bold;">
+      Shipper's Certificate for Non-Hazardous Cargo
+    </th>
+  </tr>
+  <tr>
+    <td><strong>B/L No. : {{ doc.bl_no or "" }}<br>
+    M B/L No. : {{ doc.m_bl_no or "" }}</strong></td>
+    <td><strong>Sea Port of Dep. : {{ doc.sea_port  }}</strong></td>
+    <td><strong>Port of Discharge : {{ doc.port_of_discharge  }}</strong></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="text-align: justify;">
+      This is to declare that the product mentioned below is/are non-explosive, 
+      non-flammable, non-poisonous, non-corrosive, non-dangerous, and non-hazardous 
+      and would have no adverse effect on the safety of the vessel on which it is carried.
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th style="width: 30%;">Marks and Number of Packages</th>
+    <th style="width: 50%;">Proper Description of Goods<br><small>(Trade Names not Permitted)</small></th>
+    <th style="width: 20%;">Net Quantity</th>
+  </tr>
+  {%- for row in doc.items -%}
+  <tr>
+    <td>
+      {{ row.item_name }}<br>
+     
+    </td>
+    <td>
+      {{ row.item_name }}:
+      {% if row.batch_no %}<br>BATCH NO: {{ row.batch_no }}<br>{% endif %}
+      {% if row.mfg_date %}<br>MFG DT.: {{ row.get_formatted("mfg_date") }}<br>{% endif %}
+      {% if row.exp_date %}<br>EXP DT.: {{ row.get_formatted("exp_date") }}<br>{% endif %}
+    </td>
+    <td style="text-align: right;">
+      {{ row.qty }} {{ row.uom or row.stock_uom }}
+    </td>
+  </tr>
+  {%- endfor -%}
+  <tr>
+    <td colspan="2">
+      <strong>Name & Address of Shipper</strong><br>
+      <strong>VINAYAK INGREDIENTS (INDIA) PVT. LTD.</strong><br>
+      Unit No. 116, 1st Floor, Cama Industrial Estate,<br>
+      Sun Mill Compound, Lower Parel (W),<br>
+      Mumbai – 400 013. INDIA
+    </td>
+    <td class="center">
+      <strong>For VINAYAK INGREDIENTS (INDIA) PVT. LTD.</strong><br><br><br>
+      Authorised Signatory
+    </td>
+  </tr>
+</table>
