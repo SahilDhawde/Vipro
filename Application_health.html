@@ -1,0 +1,43 @@
+<h3 style="text-align: center; text-decoration: underline;">
+  APPLICATION
+</h3>
+<br>
+<p style="display: flex; justify-content: space-between; font-weight: bold;">
+  <span>Date : {{ doc.get_formatted("date")}}</span>
+</p>
+<br>
+<p>
+  I, the undersigned <strong>{{ doc.signatory_name }}</strong>, 
+  age <strong>{{ doc.signatory_age }}</strong>, Sex 
+  <strong>{{ doc.signatory_gender  }}</strong>, resident Indian, residing at 
+  Mumbai is authorized as signatory for and on behalf of 
+  <strong>{{ doc.company_name or "M/S. Vinayak Ingredients (India) Pvt Ltd." }}</strong> undertake and declare for the material mentioned in the invoice no.
+  <strong>{{ doc.invoice_no or }}</strong> DATED 
+  <strong>{{ doc.get_formatted("invoice_date")}}</strong> as under:
+</p>
+
+<ol>
+  <li>The material is processed under strict hygienic conditions and it complies with the buyer specifications, importing country regulatory authority's standards and national standards.</li>
+  <li>The material is prepared following good hygienic practices, good manufacturing practice and under controlled environmental condition as required for the product. Due care is taken while preparing, storing and transport of the material.</li>
+  <li>Only the material for which the sample is drawn and tested will be exported.</li>
+  <li>I hereby declare that I will abide by the rules and regulations as notified by the Govt. of India for Export.</li>
+  <li>I/My organization is responsible for the quality of the consignment under consideration. The material is not yet shipped.</li>
+  <li>My application may be cancelled if I fail to collect the health certificate within 30 days of submission of application. I will apply a fresh with all the documents and applicable fee and follow all the procedure.</li>
+  <li>I also understand that myself / my organization as mentioned above, will not claim for refund of the fee submitted to your office under any circumstances.</li>
+</ol>
+
+<p>
+  All the above said undertaking and declarations are true and correct and I take all the responsibility if anything is found incorrect or faulty.  
+  I accept that in the event of giving wrong information in the above said undertaking and declarations, myself and my organization will be responsible and punishable by all clauses of Indian Penal Code as well as all Laws and Acts, of India and the importing country.
+</p>
+
+<br><br>
+
+<p><strong>Vinayak Ingredients (India) Pvt Ltd.</strong></p>
+
+<p style="margin-top: 40px;">
+  {{ doc.signatory_name }}<br>
+  {{ doc.signatory_designation  }}<br>
+  Tel: {{ doc.signatory_tel or "+91 22 40560405" }}<br>
+  Mobile: {{ doc.signatory_mobile or "9372727121" }}
+</p>
