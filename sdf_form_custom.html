@@ -1,0 +1,48 @@
+<h3 style="text-align: center; text-decoration: underline;">APPENDIX I<br>SDF FORM</h3>
+
+<p><strong>Ref. No. :</strong> {{ doc.ref_no or "" }}</p>
+<p><strong>Shipping Bill No. :</strong> {{ doc.shipping_bill_no or "" }}</p>
+<p><strong>Date :</strong> {{ doc.get_formatted("date") }}</p>
+
+<ol>
+  <li>
+    I / We hereby declare that I / We am / are the <strong>SELLER / CONSIGNOR</strong> of the goods 
+    in respect of which this declaration is made and that the particulars given in the Shipping Bill No. 
+    {{ doc.shipping_bill_no }} dated {{ doc.get_formatted("date") }} are true.
+  </li>
+
+  <li>
+    <p>a) The value as contracted with the buyer is same as the full exports value declared in the above shipping bills.</p>
+    <p>b) The full export value of the goods is not ascertainable at the time of export and that the value declared 
+       is that which I / We, having regard to the prevailing market conditions, expect to receive on 
+       the sale of goods in the overseas market.</p>
+    <p>
+      I / We undertake that I / We will deliver to the bank named herein 
+      <strong>{{ doc.bank_name or "Lower Parel Branch, KOTAK MAHINDRA BANK" }}</strong>
+      the foreign exchange representing the full export value of the goods on or before 
+      <strong>{{ doc.due_date or "______" }}</strong>
+      in the manner prescribed in Rule 9 of the Foreign Exchange Regulations Rules 1974.
+    </p>
+  </li>
+
+  <li>
+    I / We further declare that I / We am / are resident in India and I / We have a place of business in India.
+  </li>
+
+  <li>
+    I / We am / are <strong>OR</strong> am / are not in Caution List of the Reserve Bank of India.
+  </li>
+</ol>
+
+<p><strong>Date :</strong> {{ doc.get_formatted("date") }}</p>
+<p><strong>Name :</strong> {{ doc.exporter_name or "VINAYAK INGREDIENTS (INDIA) PVT. LTD." }}</p>
+<br><br>
+<p style="text-align: right;">(Signature of Exporter)</p>
+
+<hr>
+<small>
+  @ State appropriate date of delivery which must be the date due for payment or within six months from 
+  the date of shipment, whichever is earlier, but for exports warehouses established outside India with 
+  permission of the Reserve Bank the date of delivery must be within 15 months.<br>
+  * Strike out whichever is not applicable.
+</small>
