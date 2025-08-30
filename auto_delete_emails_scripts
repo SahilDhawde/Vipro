@@ -1,0 +1,8 @@
+function autoDeleteOldEmails() {
+  // Search for emails older than 7 days in Inbox (excluding Starred and Important)
+  var threads = GmailApp.search('label:inbox older_than:7d -label:starred -label:^important');
+  
+  for (var i = 0; i < threads.length; i++) {
+    threads[i].moveToTrash();
+  }
+}
